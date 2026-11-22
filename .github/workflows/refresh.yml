@@ -1,0 +1,66 @@
+name: Refresh tracker
+
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - progress.py
+      - tracker.json
+      - tests/**
+      - .github/workflows/refresh.yml
+  pull_request:
+    paths:
+      - progress.py
+      - tracker.json
+      - tests/**
+      - .github/workflows/refresh.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tracker-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - run: python -I -m unittest discover -s tests -v
+
+  refresh:
+    if: github.event_name != 'pull_request' && github.repository == 'omdev74/leonida-progress'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Refresh public source data and graphic
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -I progress.py
+      - name: Commit the successfully refreshed snapshot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/dashboard.svg data/progress.json data/report.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: refresh Leonida progress snapshot'
+            git push origin HEAD:main
+          fi
+
