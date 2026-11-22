@@ -1,93 +1,2050 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "upstream": "ItsNotRexed/Leonida",
   "repository": "omdev74/leonida-progress",
-  "observed_at": "2026-11-22 02:40 UTC",
+  "observed_at": "2026-11-22 03:00 UTC",
+  "source": {
+    "revision": "67204bf8c0471335d9046890288b33e8d5e2875b",
+    "reference": {
+      "url": "https://raw.githubusercontent.com/microsoft/DirectX-Headers/61c7718954ec73dbdd43c723240fe1a0452a3724/include/directx/d3d12.h",
+      "revision": "61c7718954ec73dbdd43c723240fe1a0452a3724",
+      "sha256": "773657b07955f7cdd526fb77049c1d8c5d23679e8cbe9ede90443cd2c93d3fab",
+      "denominator": "SDK inheritance chains excluding IUnknown"
+    },
+    "rules_id": "6831fdc6034af242",
+    "files_scanned": 30,
+    "groups": [
+      {
+        "name": "ID3D12GraphicsCommandList8",
+        "total": 79,
+        "counts": {
+          "body": 18,
+          "partial": 2,
+          "noop": 1,
+          "stub": 58
+        }
+      },
+      {
+        "name": "ID3D12Device11",
+        "total": 77,
+        "counts": {
+          "body": 25,
+          "partial": 12,
+          "noop": 4,
+          "stub": 36
+        }
+      },
+      {
+        "name": "ID3D12CommandQueue",
+        "total": 16,
+        "counts": {
+          "body": 7,
+          "partial": 0,
+          "noop": 1,
+          "stub": 8
+        }
+      },
+      {
+        "name": "ID3D12Resource",
+        "total": 12,
+        "counts": {
+          "body": 8,
+          "partial": 0,
+          "noop": 2,
+          "stub": 2
+        }
+      },
+      {
+        "name": "ID3D12Fence1",
+        "total": 9,
+        "counts": {
+          "body": 7,
+          "partial": 0,
+          "noop": 1,
+          "stub": 1
+        }
+      },
+      {
+        "name": "ID3D12DescriptorHeap",
+        "total": 8,
+        "counts": {
+          "body": 6,
+          "partial": 0,
+          "noop": 1,
+          "stub": 1
+        }
+      },
+      {
+        "name": "ID3D12CommandAllocator",
+        "total": 6,
+        "counts": {
+          "body": 3,
+          "partial": 0,
+          "noop": 2,
+          "stub": 1
+        }
+      }
+    ],
+    "symbols": [
+      {
+        "interface": "ID3D12CommandAllocator",
+        "method": "GetDevice",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 109,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L109"
+      },
+      {
+        "interface": "ID3D12CommandAllocator",
+        "method": "GetPrivateData",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 51,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L51"
+      },
+      {
+        "interface": "ID3D12CommandAllocator",
+        "method": "Reset",
+        "state": "noop",
+        "reason": "Empty or constant-return body (may be intentional)",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 61,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L61"
+      },
+      {
+        "interface": "ID3D12CommandAllocator",
+        "method": "SetName",
+        "state": "noop",
+        "reason": "Empty or constant-return body (may be intentional)",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 77,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L77"
+      },
+      {
+        "interface": "ID3D12CommandAllocator",
+        "method": "SetPrivateData",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 67,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L67"
+      },
+      {
+        "interface": "ID3D12CommandAllocator",
+        "method": "SetPrivateDataInterface",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 52,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L52"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "BeginEvent",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 457,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L457"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "CopyTileMappings",
+        "state": "stub",
+        "reason": "Explicit unsupported/logging-only body",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 501,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L501"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "EndEvent",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 457,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L457"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "ExecuteCommandLists",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 473,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L473"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "GetClockCalibration",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 457,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L457"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "GetDesc",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 471,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L471"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "GetDevice",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 109,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L109"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "GetPrivateData",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 51,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L51"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "GetTimestampFrequency",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 457,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L457"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "SetMarker",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 457,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L457"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "SetName",
+        "state": "noop",
+        "reason": "Empty or constant-return body (may be intentional)",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 77,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L77"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "SetPrivateData",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 67,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L67"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "SetPrivateDataInterface",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 457,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L457"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "Signal",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 507,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L507"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "UpdateTileMappings",
+        "state": "stub",
+        "reason": "Explicit unsupported/logging-only body",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 494,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L494"
+      },
+      {
+        "interface": "ID3D12CommandQueue",
+        "method": "Wait",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 515,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L515"
+      },
+      {
+        "interface": "ID3D12DescriptorHeap",
+        "method": "GetCPUDescriptorHandleForHeapStart",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 494,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L494"
+      },
+      {
+        "interface": "ID3D12DescriptorHeap",
+        "method": "GetDesc",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 493,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L493"
+      },
+      {
+        "interface": "ID3D12DescriptorHeap",
+        "method": "GetDevice",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 109,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L109"
+      },
+      {
+        "interface": "ID3D12DescriptorHeap",
+        "method": "GetGPUDescriptorHandleForHeapStart",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 498,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L498"
+      },
+      {
+        "interface": "ID3D12DescriptorHeap",
+        "method": "GetPrivateData",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 51,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L51"
+      },
+      {
+        "interface": "ID3D12DescriptorHeap",
+        "method": "SetName",
+        "state": "noop",
+        "reason": "Empty or constant-return body (may be intentional)",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 77,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L77"
+      },
+      {
+        "interface": "ID3D12DescriptorHeap",
+        "method": "SetPrivateData",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 67,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L67"
+      },
+      {
+        "interface": "ID3D12DescriptorHeap",
+        "method": "SetPrivateDataInterface",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 483,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L483"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "AddToStateObject",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CheckDriverMatchingIdentifier",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CheckFeatureSupport",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1793,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1793"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CopyDescriptors",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1326,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1326"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CopyDescriptorsSimple",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1347,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1347"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateCommandAllocator",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1188,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1188"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateCommandList",
+        "state": "partial",
+        "reason": "Unsupported marker in body or a recognized local helper",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1192,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1192"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateCommandList1",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1199,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1199"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateCommandQueue",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1179,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1179"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateCommandQueue1",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1682,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1682"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateCommandSignature",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateCommittedResource",
+        "state": "partial",
+        "reason": "Unsupported marker in body or a recognized local helper",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1527,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1527"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateCommittedResource1",
+        "state": "partial",
+        "reason": "Unsupported marker in body or a recognized local helper",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1636,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1636"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateCommittedResource2",
+        "state": "partial",
+        "reason": "Unsupported marker in body or a recognized local helper",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1646,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1646"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateCommittedResource3",
+        "state": "partial",
+        "reason": "Unsupported marker in body or a recognized local helper",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1659,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1659"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateComputePipelineState",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateConstantBufferView",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateDepthStencilView",
+        "state": "partial",
+        "reason": "Unsupported marker in body or a recognized local helper",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1296,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1296"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateDescriptorHeap",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1220,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1220"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateFence",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1216,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1216"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateGraphicsPipelineState",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateHeap",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateHeap1",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateLifetimeTracker",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateMetaCommand",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreatePipelineLibrary",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreatePipelineState",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreatePlacedResource",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreatePlacedResource1",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreatePlacedResource2",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateProtectedResourceSession",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateProtectedResourceSession1",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateQueryHeap",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateRenderTargetView",
+        "state": "partial",
+        "reason": "Unsupported marker in body or a recognized local helper",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1234,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1234"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateReservedResource",
+        "state": "partial",
+        "reason": "Unsupported marker in body or a recognized local helper",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1580,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1580"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateReservedResource1",
+        "state": "partial",
+        "reason": "Unsupported marker in body or a recognized local helper",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1586,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1586"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateReservedResource2",
+        "state": "partial",
+        "reason": "Unsupported marker in body or a recognized local helper",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1599,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1599"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateRootSignature",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateSampler",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1460,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1460"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateSampler2",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1473,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1473"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateSamplerFeedbackUnorderedAccessView",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateShaderCacheSession",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateShaderResourceView",
+        "state": "partial",
+        "reason": "Unsupported marker in body or a recognized local helper",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1358,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1358"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateSharedHandle",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateStateObject",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "CreateUnorderedAccessView",
+        "state": "partial",
+        "reason": "Unsupported marker in body or a recognized local helper",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1416,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1416"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "EnqueueMakeResident",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1153,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1153"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "EnumerateMetaCommandParameters",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "EnumerateMetaCommands",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "Evict",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1138,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1138"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "GetAdapterLuid",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "GetCopyableFootprints",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1700,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1700"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "GetCopyableFootprints1",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1689,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1689"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "GetCustomHeapProperties",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "GetDescriptorHandleIncrementSize",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1230,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1230"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "GetDeviceRemovedReason",
+        "state": "noop",
+        "reason": "Empty or constant-return body (may be intentional)",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1127,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1127"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "GetNodeCount",
+        "state": "noop",
+        "reason": "Empty or constant-return body (may be intentional)",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1126,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1126"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "GetPrivateData",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 51,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L51"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "GetRaytracingAccelerationStructurePrebuildInfo",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "GetResourceAllocationInfo",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1771,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1771"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "GetResourceAllocationInfo1",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1775,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1775"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "GetResourceAllocationInfo2",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1779,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1779"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "GetResourceTiling",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1609,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1609"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "MakeResident",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1134,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1134"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "OpenExistingHeapFromAddress",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "OpenExistingHeapFromFileMapping",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "OpenSharedHandle",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "OpenSharedHandleByName",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "RemoveDevice",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "SetBackgroundProcessingMode",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1168,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1168"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "SetEventOnMultipleFenceCompletion",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "SetName",
+        "state": "noop",
+        "reason": "Empty or constant-return body (may be intentional)",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 77,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L77"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "SetPrivateData",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 67,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L67"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "SetPrivateDataInterface",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "SetResidencyPriority",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1145,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1145"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "SetStablePowerState",
+        "state": "noop",
+        "reason": "Empty or constant-return body (may be intentional)",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1163,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1163"
+      },
+      {
+        "interface": "ID3D12Device11",
+        "method": "ShaderCacheControl",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 1038,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L1038"
+      },
+      {
+        "interface": "ID3D12Fence1",
+        "method": "GetCompletedValue",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 401,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L401"
+      },
+      {
+        "interface": "ID3D12Fence1",
+        "method": "GetCreationFlags",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 402,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L402"
+      },
+      {
+        "interface": "ID3D12Fence1",
+        "method": "GetDevice",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 109,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L109"
+      },
+      {
+        "interface": "ID3D12Fence1",
+        "method": "GetPrivateData",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 51,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L51"
+      },
+      {
+        "interface": "ID3D12Fence1",
+        "method": "SetEventOnCompletion",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 410,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L410"
+      },
+      {
+        "interface": "ID3D12Fence1",
+        "method": "SetName",
+        "state": "noop",
+        "reason": "Empty or constant-return body (may be intentional)",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 77,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L77"
+      },
+      {
+        "interface": "ID3D12Fence1",
+        "method": "SetPrivateData",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 67,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L67"
+      },
+      {
+        "interface": "ID3D12Fence1",
+        "method": "SetPrivateDataInterface",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 369,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L369"
+      },
+      {
+        "interface": "ID3D12Fence1",
+        "method": "Signal",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 404,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L404"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "AtomicCopyBufferUINT",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "AtomicCopyBufferUINT64",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "Barrier",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 144,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L144"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "BeginEvent",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "BeginQuery",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "BeginRenderPass",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "BuildRaytracingAccelerationStructure",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "ClearDepthStencilView",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 231,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L231"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "ClearRenderTargetView",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 223,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L223"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "ClearState",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "ClearUnorderedAccessViewFloat",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 250,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L250"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "ClearUnorderedAccessViewUint",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 243,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L243"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "Close",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 88,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L88"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "CopyBufferRegion",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 179,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L179"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "CopyRaytracingAccelerationStructure",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "CopyResource",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 194,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L194"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "CopyTextureRegion",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 185,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L185"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "CopyTiles",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "DiscardResource",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "Dispatch",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "DispatchMesh",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "DispatchRays",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "DrawIndexedInstanced",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "DrawInstanced",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "EmitRaytracingAccelerationStructurePostbuildInfo",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "EndEvent",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "EndQuery",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "EndRenderPass",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "ExecuteBundle",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 104,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L104"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "ExecuteIndirect",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "ExecuteMetaCommand",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "GetDevice",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 109,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L109"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "GetPrivateData",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 51,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L51"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "GetType",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 84,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L84"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "IASetIndexBuffer",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "IASetPrimitiveTopology",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "IASetVertexBuffers",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "InitializeMetaCommand",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "OMSetBlendFactor",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "OMSetDepthBounds",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "OMSetFrontAndBackStencilRef",
+        "state": "partial",
+        "reason": "Unsupported marker in body or a recognized local helper",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 264,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L264"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "OMSetRenderTargets",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "OMSetStencilRef",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "RSSetScissorRects",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "RSSetShadingRate",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "RSSetShadingRateImage",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "RSSetViewports",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "Reset",
+        "state": "partial",
+        "reason": "Unsupported marker in body or a recognized local helper",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 93,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L93"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "ResolveQueryData",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "ResolveSubresource",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 200,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L200"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "ResolveSubresourceRegion",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 206,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L206"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "ResourceBarrier",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 120,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L120"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SOSetTargets",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetComputeRoot32BitConstant",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetComputeRoot32BitConstants",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetComputeRootConstantBufferView",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetComputeRootDescriptorTable",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetComputeRootShaderResourceView",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetComputeRootSignature",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetComputeRootUnorderedAccessView",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetDescriptorHeaps",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetGraphicsRoot32BitConstant",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetGraphicsRoot32BitConstants",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetGraphicsRootConstantBufferView",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetGraphicsRootDescriptorTable",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetGraphicsRootShaderResourceView",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetGraphicsRootSignature",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetGraphicsRootUnorderedAccessView",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetMarker",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetName",
+        "state": "noop",
+        "reason": "Empty or constant-return body (may be intentional)",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 77,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L77"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetPipelineState",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetPipelineState1",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetPredication",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 218,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L218"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetPrivateData",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 67,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L67"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetPrivateDataInterface",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetProtectedResourceSession",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetSamplePositions",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "SetViewInstanceMask",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12GraphicsCommandList8",
+        "method": "WriteBufferImmediate",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_com.cpp",
+        "line": 69,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com.cpp#L69"
+      },
+      {
+        "interface": "ID3D12Resource",
+        "method": "GetDesc",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 624,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L624"
+      },
+      {
+        "interface": "ID3D12Resource",
+        "method": "GetDevice",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 109,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L109"
+      },
+      {
+        "interface": "ID3D12Resource",
+        "method": "GetGPUVirtualAddress",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 508,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L508"
+      },
+      {
+        "interface": "ID3D12Resource",
+        "method": "GetHeapProperties",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 636,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L636"
+      },
+      {
+        "interface": "ID3D12Resource",
+        "method": "GetPrivateData",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 51,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L51"
+      },
+      {
+        "interface": "ID3D12Resource",
+        "method": "Map",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 646,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L646"
+      },
+      {
+        "interface": "ID3D12Resource",
+        "method": "ReadFromSubresource",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 666,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L666"
+      },
+      {
+        "interface": "ID3D12Resource",
+        "method": "SetName",
+        "state": "noop",
+        "reason": "Empty or constant-return body (may be intentional)",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 77,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L77"
+      },
+      {
+        "interface": "ID3D12Resource",
+        "method": "SetPrivateData",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_com_object.h",
+        "line": 67,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_com_object.h#L67"
+      },
+      {
+        "interface": "ID3D12Resource",
+        "method": "SetPrivateDataInterface",
+        "state": "stub",
+        "reason": "Inherited generated fallback",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 508,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L508"
+      },
+      {
+        "interface": "ID3D12Resource",
+        "method": "Unmap",
+        "state": "noop",
+        "reason": "Empty or constant-return body (may be intentional)",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 658,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L658"
+      },
+      {
+        "interface": "ID3D12Resource",
+        "method": "WriteToSubresource",
+        "state": "body",
+        "reason": "Nontrivial definition; no recognized unsupported marker",
+        "path": "runtime/shims/d3d12_vulkan_device.cpp",
+        "line": 662,
+        "url": "https://github.com/ItsNotRexed/Leonida/blob/67204bf8c0471335d9046890288b33e8d5e2875b/runtime/shims/d3d12_vulkan_device.cpp#L662"
+      }
+    ]
+  },
   "sources": [
     {
       "number": 313,
       "url": "https://github.com/ItsNotRexed/Leonida/issues/313",
-      "updated_at": "2026-11-22T02:39:04Z"
+      "updated_at": "2026-11-22T02:58:02Z"
     },
     {
       "number": 634,
       "url": "https://github.com/ItsNotRexed/Leonida/issues/634",
-      "updated_at": "2026-11-22T02:40:05Z"
+      "updated_at": "2026-11-22T02:59:55Z"
     }
   ],
+  "warnings": [],
   "panels": [
     {
       "id": "methods",
-      "title": "D3D12 method implementation",
+      "title": "D3D12 source scan",
       "unit": "methods",
-      "note": "Coordinator-reported implementation status. Green does not mean GPU-tested.",
+      "note": "Static source classification. Body presence does not establish correct behavior or GPU verification.",
       "states": [
-        "main",
-        "pr",
-        "open"
+        "body",
+        "partial",
+        "noop",
+        "stub"
       ],
       "groups": [
         {
           "name": "ID3D12GraphicsCommandList8",
           "total": 79,
           "counts": {
-            "main": 17,
-            "pr": 36,
-            "open": 26
+            "body": 18,
+            "partial": 2,
+            "noop": 1,
+            "stub": 58
           }
         },
         {
           "name": "ID3D12Device11",
           "total": 77,
           "counts": {
-            "main": 22,
-            "pr": 16,
-            "open": 39
+            "body": 25,
+            "partial": 12,
+            "noop": 4,
+            "stub": 36
           }
         },
         {
           "name": "ID3D12CommandQueue",
           "total": 16,
           "counts": {
-            "main": 8,
-            "pr": 3,
-            "open": 5
+            "body": 7,
+            "partial": 0,
+            "noop": 1,
+            "stub": 8
           }
         },
         {
           "name": "ID3D12Resource",
           "total": 12,
           "counts": {
-            "main": 8,
-            "pr": 3,
-            "open": 1
+            "body": 8,
+            "partial": 0,
+            "noop": 2,
+            "stub": 2
           }
         },
         {
           "name": "ID3D12Fence1",
           "total": 9,
           "counts": {
-            "main": 8,
-            "pr": 0,
-            "open": 1
+            "body": 7,
+            "partial": 0,
+            "noop": 1,
+            "stub": 1
           }
         },
         {
           "name": "ID3D12DescriptorHeap",
           "total": 8,
           "counts": {
-            "main": 7,
-            "pr": 0,
-            "open": 1
+            "body": 6,
+            "partial": 0,
+            "noop": 1,
+            "stub": 1
           }
         },
         {
           "name": "ID3D12CommandAllocator",
           "total": 6,
           "counts": {
-            "main": 5,
-            "pr": 0,
-            "open": 1
+            "body": 3,
+            "partial": 0,
+            "noop": 2,
+            "stub": 1
           }
         }
       ]
@@ -107,10 +2064,10 @@
         {
           "name": "D3D12 / Vulkan",
           "prefix": "D3D",
-          "total": 62,
+          "total": 63,
           "counts": {
-            "active": 49,
-            "available": 3,
+            "active": 51,
+            "available": 2,
             "blocked": 10,
             "unknown": 0
           }
@@ -120,8 +2077,8 @@
           "prefix": "SHADER",
           "total": 43,
           "counts": {
-            "active": 39,
-            "available": 3,
+            "active": 40,
+            "available": 2,
             "blocked": 1,
             "unknown": 0
           }
@@ -129,9 +2086,9 @@
         {
           "name": "Tests / CI",
           "prefix": "TEST",
-          "total": 25,
+          "total": 28,
           "counts": {
-            "active": 19,
+            "active": 22,
             "available": 5,
             "blocked": 1,
             "unknown": 0
@@ -140,9 +2097,9 @@
         {
           "name": "Build / tools",
           "prefix": "BUILD",
-          "total": 21,
+          "total": 23,
           "counts": {
-            "active": 21,
+            "active": 23,
             "available": 0,
             "blocked": 0,
             "unknown": 0
@@ -151,10 +2108,10 @@
         {
           "name": "Assets / formats",
           "prefix": "ASSET",
-          "total": 16,
+          "total": 17,
           "counts": {
-            "active": 10,
-            "available": 3,
+            "active": 12,
+            "available": 2,
             "blocked": 3,
             "unknown": 0
           }
@@ -162,11 +2119,22 @@
         {
           "name": "Runtime",
           "prefix": "RT",
-          "total": 9,
+          "total": 11,
+          "counts": {
+            "active": 7,
+            "available": 0,
+            "blocked": 4,
+            "unknown": 0
+          }
+        },
+        {
+          "name": "Contributor process",
+          "prefix": "PROC",
+          "total": 5,
           "counts": {
             "active": 5,
             "available": 0,
-            "blocked": 4,
+            "blocked": 0,
             "unknown": 0
           }
         },
@@ -175,20 +2143,9 @@
           "prefix": "FUZZ",
           "total": 4,
           "counts": {
-            "active": 2,
+            "active": 3,
             "available": 0,
-            "blocked": 2,
-            "unknown": 0
-          }
-        },
-        {
-          "name": "Contributor process",
-          "prefix": "PROC",
-          "total": 4,
-          "counts": {
-            "active": 4,
-            "available": 0,
-            "blocked": 0,
+            "blocked": 1,
             "unknown": 0
           }
         }
@@ -263,7 +2220,7 @@
     },
     {
       "id": "ASSET-56",
-      "state": "available",
+      "state": "active",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
     },
     {
@@ -274,6 +2231,11 @@
     {
       "id": "ASSET-58",
       "state": "available",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
+      "id": "ASSET-59",
+      "state": "active",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
     },
     {
@@ -378,6 +2340,16 @@
     },
     {
       "id": "BUILD-134",
+      "state": "active",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
+      "id": "BUILD-135",
+      "state": "active",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
+      "id": "BUILD-136",
       "state": "active",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
     },
@@ -673,7 +2645,7 @@
     },
     {
       "id": "D3D-97",
-      "state": "available",
+      "state": "active",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/313"
     },
     {
@@ -692,8 +2664,13 @@
       "source": "https://github.com/ItsNotRexed/Leonida/issues/313"
     },
     {
+      "id": "D3D-101",
+      "state": "active",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/313"
+    },
+    {
       "id": "FUZZ-10",
-      "state": "blocked",
+      "state": "active",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
     },
     {
@@ -728,6 +2705,11 @@
     },
     {
       "id": "PROC-25",
+      "state": "active",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
+      "id": "PROC-26",
       "state": "active",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
     },
@@ -773,6 +2755,16 @@
     },
     {
       "id": "RT-23",
+      "state": "active",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
+      "id": "RT-24",
+      "state": "active",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
+      "id": "RT-25",
       "state": "active",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
     },
@@ -988,7 +2980,7 @@
     },
     {
       "id": "SHADER-118",
-      "state": "available",
+      "state": "active",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
     },
     {
@@ -1078,7 +3070,7 @@
     },
     {
       "id": "TEST-98",
-      "state": "available",
+      "state": "active",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
     },
     {
@@ -1114,6 +3106,21 @@
     {
       "id": "TEST-105",
       "state": "active",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
+      "id": "TEST-106",
+      "state": "active",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
+      "id": "TEST-107",
+      "state": "active",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
+      "id": "TEST-108",
+      "state": "available",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
     }
   ],

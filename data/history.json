@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "series": [
+    {
+      "rules_id": "6831fdc6034af242",
+      "reference": {
+        "url": "https://raw.githubusercontent.com/microsoft/DirectX-Headers/61c7718954ec73dbdd43c723240fe1a0452a3724/include/directx/d3d12.h",
+        "revision": "61c7718954ec73dbdd43c723240fe1a0452a3724",
+        "sha256": "773657b07955f7cdd526fb77049c1d8c5d23679e8cbe9ede90443cd2c93d3fab",
+        "denominator": "SDK inheritance chains excluding IUnknown"
+      },
+      "points": [
+        {
+          "date": "2026-11-21",
+          "revision": "4abd54571b6efa02d97eda4711792fa00b455dc3",
+          "origin": "rescanned",
+          "body": 60,
+          "partial": 8,
+          "noop": 11,
+          "stub": 128,
+          "total": 207
+        },
+        {
+          "date": "2026-11-22",
+          "revision": "67204bf8c0471335d9046890288b33e8d5e2875b",
+          "origin": "observed",
+          "body": 74,
+          "partial": 14,
+          "noop": 12,
+          "stub": 107,
+          "total": 207
+        }
+      ],
+      "unmeasured_history": [
+        {
+          "date": "2026-11-20",
+          "revision": "bd2dd1c874bb649fe84b6308f667de8812327e3f",
+          "reason": "Generated D3D12 interface list not found in runtime/CMakeLists.txt"
+        }
+      ]
+    }
+  ],
+  "current_rules_id": "6831fdc6034af242"
+}

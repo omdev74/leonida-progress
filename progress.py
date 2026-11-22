@@ -1,6 +1,6 @@
-"""Build an evidence-linked README SVG from Leonida's public coordination tables.
+"""Build source-scanned README graphics, history, badges and contribution context.
 
-Python 3.12+, standard library only. Reads metadata, never runs upstream code.
+Python 3.12+ and the pinned C++ parser. Never builds or runs upstream code.
 """
 from __future__ import annotations
 
@@ -19,14 +19,18 @@ import time
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-from xml.sax.saxutils import escape
+from xml.sax.saxutils import escape, quoteattr
 
 ROOT = Path(__file__).resolve().parent
-METHOD_STATES = ("main", "pr", "open")
+sys.path.insert(0, str(ROOT))
+import source_scan
+import report_assets
+
+METHOD_STATES = source_scan.STATES
 TASK_STATES = ("active", "available", "blocked", "unknown")
-COLORS = {"main": "#2ea043", "pr": "#d29922", "open": "#484f58",
+COLORS = {"body": "#2ea043", "partial": "#d29922", "noop": "#79c0ff", "stub": "#484f58",
           "active": "#d29922", "available": "#484f58", "blocked": "#f47067", "unknown": "#79c0ff"}
-LABELS = {"main": "On main", "pr": "In open PRs", "open": "Unimplemented",
+LABELS = {"body": "Body present", "partial": "Partial / unsupported", "noop": "No-op / constant", "stub": "Stub / missing",
           "active": "Active / claimed", "available": "Available", "blocked": "Blocked", "unknown": "Unclear"}
 WORKSTREAMS = {"D3D": "D3D12 / Vulkan", "SHADER": "Shader translator", "ASSET": "Assets / formats",
                "BUILD": "Build / tools", "TEST": "Tests / CI", "RT": "Runtime", "FUZZ": "Fuzzing",
@@ -80,29 +84,6 @@ def markdown_tables(body: str):
             header = row
         else:
             rows.append(row)
-
-
-def method_groups(body: str):
-    groups = []
-    for _, headers, rows in markdown_tables(body):
-        if [clean(h) for h in headers] != ["interface", "methods", "on main", "in open prs", "open"]:
-            continue
-        for row in rows:
-            if len(row) != 5:
-                raise SourceError("Method table column count changed")
-            name = row[0].strip().strip("`")
-            if not re.fullmatch(r"I[A-Z][A-Za-z0-9_]+", name):
-                raise SourceError(f"Unexpected interface name: {name!r}")
-            try:
-                total, main, pr, opened = [int(clean(c).replace(",", "")) for c in row[1:]]
-            except ValueError as error:
-                raise SourceError(f"Non-numeric method counts for {name}") from error
-            if min(total, main, pr, opened) < 0 or total == 0 or main + pr + opened != total:
-                raise SourceError(f"Method counts do not sum to total for {name}")
-            groups.append({"name": name, "total": total, "counts": {"main": main, "pr": pr, "open": opened}})
-    if not groups or len({g["name"] for g in groups}) != len(groups):
-        raise SourceError("Method coverage table missing, empty or duplicated; keeping last good output")
-    return sorted(groups, key=lambda g: (-g["total"], g["name"]))
 
 
 def task_inventory(issues):
@@ -188,38 +169,44 @@ class GitHub:
             time.sleep(2 ** attempt)
 
 
-def collect(config, api, observed_at):
+def collect(config, api, observed_at, source):
     repo = config["upstream"]
     if not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repo):
         raise SourceError("Invalid upstream repository")
-    query = f'repo:{repo} is:issue is:open in:title "{config["coordination_title"]}"'
-    search = api.get("search/issues?" + urlencode({"q": query, "per_page": 100}))
-    if search.get("incomplete_results"):
-        raise SourceError("Incomplete coordination issue search")
-    candidates = [i for i in search.get("items", [])
-                  if i["title"].startswith(config["coordination_title"]) and not i.get("pull_request")]
-    if len(candidates) != 1:
-        raise SourceError("Expected one open coordination issue; keeping last good output")
-    coordination = api.get(f"repos/{repo}/issues/{candidates[0]['number']}")
-    methods = api.get(f"repos/{repo}/issues/{int(config['method_issue'])}")
-    for issue in (methods, coordination):
-        if not issue.get("body") or issue.get("state") != "open":
-            raise SourceError(f"Source issue #{issue.get('number')} is closed or empty")
-    tasks = task_inventory([methods, coordination])
-    sources = [{"number": i["number"], "url": i["html_url"], "updated_at": i["updated_at"]}
-               for i in (methods, coordination)]
+    tasks, sources, warnings = [], [], []
+    try:
+        query = f'repo:{repo} is:issue is:open in:title "{config["coordination_title"]}"'
+        search = api.get("search/issues?" + urlencode({"q": query, "per_page": 100}))
+        if search.get("incomplete_results"):
+            raise SourceError("Incomplete coordination issue search")
+        candidates = [i for i in search.get("items", [])
+                      if i["title"].startswith(config["coordination_title"]) and not i.get("pull_request")]
+        if len(candidates) != 1:
+            raise SourceError("Expected one open coordination issue")
+        coordination = api.get(f"repos/{repo}/issues/{candidates[0]['number']}")
+        methods = api.get(f"repos/{repo}/issues/{int(config['method_issue'])}")
+        for issue in (methods, coordination):
+            if not issue.get("body") or issue.get("state") != "open":
+                raise SourceError(f"Coordination issue #{issue.get('number')} is closed or empty")
+        tasks = task_inventory([methods, coordination])
+        sources = [{"number": i["number"], "url": i["html_url"], "updated_at": i["updated_at"]}
+                   for i in (methods, coordination)]
+    except (SourceError, KeyError, TypeError) as error:
+        # Optional human coordination context cannot stop the independent code scan.
+        warnings.append("Contribution queue unavailable: " + str(error))
     panels = [
-        {"id": "methods", "title": "D3D12 method implementation", "unit": "methods",
-         "note": "Coordinator-reported implementation status. Green does not mean GPU-tested.",
-         "states": list(METHOD_STATES), "groups": method_groups(methods["body"])},
-        {"id": "tasks", "title": "Open contribution tasks", "unit": "tasks",
-         "note": "Current coordination tables only. Tasks leaving these tables are not assumed complete.",
-         "states": list(TASK_STATES), "groups": task_groups(tasks)},
+        {"id": "methods", "title": "D3D12 source scan", "unit": "methods",
+         "note": "Static source classification. Body presence does not establish correct behavior or GPU verification.",
+         "states": list(METHOD_STATES), "groups": source["groups"]},
     ]
+    if tasks:
+        panels.append({"id": "tasks", "title": "Open contribution tasks", "unit": "tasks",
+         "note": "Current coordination tables only. Tasks leaving these tables are not assumed complete.",
+         "states": list(TASK_STATES), "groups": task_groups(tasks)})
     if sum(g["total"] for p in panels for g in p["groups"]) > 50000:
         raise SourceError("Inventory exceeds 50,000 cells; review the source before rendering")
-    return {"schema_version": 1, "upstream": repo, "repository": config["repository"], "observed_at": observed_at,
-            "sources": sources, "panels": panels, "tasks": tasks,
+    return {"schema_version": 2, "upstream": repo, "repository": config["repository"], "observed_at": observed_at,
+            "source": source, "sources": sources, "warnings": warnings, "panels": panels, "tasks": tasks,
             "verification": "No game, runtime or GPU tests run by this tracker. Not a game-completion estimate."}
 
 
@@ -268,11 +255,10 @@ def svg_text(x, y, value, size=14, fill=TEXT, bold=False):
 
 def render_svg(data):
     width, y = 1200, 144
-    parts = [svg_text(28, 40, "Leonida progress tracker", 25, bold=True),
+    parts = [svg_text(28, 40, "Leonida source tracker", 25, bold=True),
              svg_text(28, 66, "Implementation and contribution inventory · not a measure of game completion.", 14, MUTED),
-             svg_text(28, 90, f"Checked {data['observed_at']} · hourly refresh · sources: "
-                      + ", ".join(f"#{s['number']}" for s in data["sources"]), 13, MUTED),
-             svg_text(28, 114, "Reported by Leonida's coordinator; this tracker does not run GPU or game tests.", 13, MUTED)]
+             svg_text(28, 90, f"Checked {data['observed_at']} · hourly refresh · main {data['source']['revision'][:12]}", 13, MUTED),
+             svg_text(28, 114, "C++ source + pinned Microsoft SDK reference. No GPU or game tests run by this tracker.", 13, MUTED)]
     for panel in data["panels"]:
         groups, states = panel["groups"], panel["states"]
         total = sum(g["total"] for g in groups)
@@ -297,10 +283,18 @@ def render_svg(data):
                 unlabelled.append(f"{short}: {summary}")
             index = 0
             for state in states:
-                for _ in range(group["counts"][state]):
+                symbols = [s for s in data["source"]["symbols"]
+                           if panel["id"] == "methods" and s["interface"] == group["name"] and s["state"] == state]
+                for n in range(group["counts"][state]):
                     cx, cy = gx + 6 + index % cols * (size + 2), gy + inset + index // cols * (size + 2)
+                    if n < len(symbols):
+                        symbol = symbols[n]
+                        contents.append(f'<a href={quoteattr(symbol["url"])}><title>'
+                                        + escape(f"{symbol['interface']}::{symbol['method']}: {symbol['reason']}") + '</title>')
                     contents.append(f'<rect class="cell" data-state="{state}" x="{cx:.1f}" y="{cy:.1f}" '
                                     f'width="{size}" height="{size}" fill="{COLORS[state]}"/>')
+                    if n < len(symbols):
+                        contents.append('</a>')
                     index += 1
             contents.append("</g>")
         notes = []
@@ -321,7 +315,7 @@ def render_svg(data):
             counts.update(group["counts"])
         heading = f"{panel['title']}: {total} {panel['unit']}"
         if panel["id"] == "methods":
-            heading += f" · {counts['main']} on main · {counts['pr']} in PRs · {counts['open']} open"
+            heading += f" · {counts['body']} bodies · {counts['partial']} partial · {counts['stub']} stubs"
         parts += [svg_text(40, y + 27, heading, 18, bold=True),
                   svg_text(40, y + 51, panel["note"], 13, MUTED)]
         lx = 40
@@ -336,24 +330,37 @@ def render_svg(data):
         for i, note in enumerate(notes):
             parts.append(svg_text(40, y + 108 + chart_height + 17 + 19 * i, note, 11, MUTED))
         y += panel_height + 18
-    parts.append(svg_text(28, y + 12, f"Sources and definitions: github.com/{data['repository']} · open the README for evidence links.", 12, MUTED))
+    if data.get("warnings"):
+        parts.append(svg_text(28, y + 12, "Contribution queue unavailable; code measurement above is current. See report.md.", 12, "#f47067"))
+        y += 20
+    parts.append(svg_text(28, y + 12, f"Sources and definitions: github.com/{data['repository']} · history and badges in the README.", 12, MUTED))
     height = y + 36
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
             f'viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc" '
             'font-family="Segoe UI,Helvetica,Arial,sans-serif">'
-            '<title id="title">Leonida implementation and contribution tracker</title>'
+            '<title id="title">Leonida source and contribution tracker</title>'
             '<desc id="desc">One square per reported method or listed task. '
-            'Implementation is not test verification or game completion. See data/report.md for a text table.</desc>'
+            'Source presence is not test verification or game completion. See data/report.md for named methods.</desc>'
             f'<rect width="{width}" height="{height}" fill="{BG}"/>' + "".join(parts) + "</svg>\n")
 
 
 def render_report(data):
+    source = data["source"]
     lines = ["# Leonida tracker evidence", "", f"Checked: {data['observed_at']}", "", data["verification"], "",
-             "## Sources", ""]
-    for source in data["sources"]:
-        lines.append(f"- [Issue #{source['number']}]({source['url']}); source updated {source['updated_at']}.")
-    lines += ["", "The source update time includes comments; it does not prove when the tables were last reconciled.",
-              "Counts are coordinator-reported, not independently scanned from C++ or verified by this tracker.", ""]
+             "## Code measurement", "",
+             f"[Upstream main revision {source['revision'][:12]}](https://github.com/{data['upstream']}/commit/{source['revision']}).",
+             f"Scanned {source['files_scanned']} production C++ files. Rules: `{source['rules_id']}`.",
+             f"[Pinned Microsoft SDK reference]({source['reference']['url']}); SHA-256 `{source['reference']['sha256']}`.",
+             "The denominator follows CMake's generated-stub interfaces and their SDK inheritance chains, excluding IUnknown.",
+             "Bodies, partial paths, simple no-ops, and stubs are classified statically; none is a correctness claim.", "",
+             "## Optional coordination sources", ""]
+    for coordination_source in data["sources"]:
+        lines.append(f"- [Issue #{coordination_source['number']}]({coordination_source['url']}); "
+                     f"source updated {coordination_source['updated_at']}.")
+    lines += ["", "Coordination timestamps include comments and do not prove that task tables were reconciled.",
+              "Code measurements do not depend on coordinator-reported method totals.", ""]
+    for warning in data.get("warnings", []):
+        lines.append("- " + warning)
     for panel in data["panels"]:
         lines += ["## " + panel["title"], "", panel["note"], "",
                   "| Group | Total | " + " | ".join(LABELS[s] for s in panel["states"]) + " |",
@@ -362,6 +369,12 @@ def render_report(data):
             lines.append(f"| {group['name']} | {group['total']} | "
                          + " | ".join(str(group["counts"][s]) for s in panel["states"]) + " |")
         lines.append("")
+    lines += ["## Named method evidence", "", "| Interface | Method | Classification | Reason | Source |",
+              "|---|---|---|---|---|"]
+    for symbol in source["symbols"]:
+        lines.append(f"| {symbol['interface']} | {symbol['method']} | {LABELS[symbol['state']]} | {symbol['reason']} | "
+                     f"[{symbol['path']}:{symbol['line']}]({symbol['url']}) |")
+    lines.append("")
     lines += ["## Listed task IDs", "", "This is an inventory of the current tables, not a lifetime completion ledger.",
               "Active includes claimed work and PRs; blocked is recognized only from explicit status text.",
               "New task prefixes are discovered automatically. Repeated task IDs count once.", "",
@@ -371,10 +384,20 @@ def render_report(data):
     return "\n".join(lines) + "\n"
 
 
-def publish(data, output):
+def publish(data, output, history):
     """Validate and render everything before replacing any last-known-good file."""
+    total_cells = 0
+    for panel in data["panels"]:
+        for group in panel["groups"]:
+            values = [group["counts"][state] for state in panel["states"]]
+            if any(not isinstance(value, int) or value < 0 for value in values) or sum(values) != group["total"]:
+                raise SourceError("Rendered group counts do not match the denominator")
+            total_cells += group["total"]
+    if total_cells > 50000:
+        raise SourceError("Inventory exceeds 50,000 cells")
     payloads = {"progress.json": json.dumps(data, indent=2, ensure_ascii=False) + "\n",
-                "dashboard.svg": render_svg(data), "report.md": render_report(data)}
+                "dashboard.svg": render_svg(data), "report.md": render_report(data),
+                **report_assets.assets(data, history)}
     output.mkdir(parents=True, exist_ok=True)
     # Workflow commits only after the process succeeds; a failed run never publishes partial outputs.
     for name, content in payloads.items():
@@ -392,13 +415,32 @@ def main(argv=None):
     parser.add_argument("--config", type=Path, default=ROOT / "tracker.json")
     parser.add_argument("--output", type=Path, default=ROOT / "data")
     parser.add_argument("--gh-cli", action="store_true", help="use your authenticated gh CLI for local requests")
+    parser.add_argument("--cache", type=Path, default=ROOT / ".cache")
     args = parser.parse_args(argv)
     try:
         config = json.loads(args.config.read_text(encoding="utf-8"))
         now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-        data = collect(config, GitHub(args.gh_cli), now)
-        publish(data, args.output)
-    except (SourceError, OSError, KeyError, json.JSONDecodeError) as error:
+        repository = source_scan.SourceRepository(config["upstream"], args.cache)
+        revision = repository.refresh()
+        header, reference = source_scan.load_reference(config["sdk_reference"], args.cache)
+        source = source_scan.scan(repository.files(revision), header, revision, config["upstream"], reference)
+        history_path = args.output / "history.json"
+        previous = json.loads(history_path.read_text(encoding="utf-8")) if history_path.exists() else None
+        backfill, skipped = [], []
+        if not previous or not any(s["rules_id"] == source["rules_id"] for s in previous["series"]):
+            for day, historical_revision, _ in repository.history_revisions():
+                if day >= now[:10]:
+                    continue
+                try:
+                    historical = source_scan.scan(repository.files(historical_revision), header, historical_revision,
+                                                  config["upstream"], reference)
+                    backfill.append(report_assets.history_point(historical, day, "rescanned"))
+                except source_scan.ScanError as error:
+                    skipped.append({"date": day, "revision": historical_revision, "reason": str(error)})
+        history = report_assets.update_history(previous, source, now[:10], backfill, skipped)
+        data = collect(config, GitHub(args.gh_cli), now, source)
+        publish(data, args.output, history)
+    except (SourceError, source_scan.ScanError, OSError, KeyError, json.JSONDecodeError) as error:
         print(f"Tracker refresh failed: {error}", file=sys.stderr)
         return 1
     print(f"Updated {args.output}: {sum(g['total'] for g in data['panels'][0]['groups'])} methods, "

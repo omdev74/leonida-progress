@@ -2,5 +2,9 @@
   "upstream": "ItsNotRexed/Leonida",
   "method_issue": 313,
   "coordination_title": "Coordinating who works on what",
-  "repository": "omdev74/leonida-progress"
+  "repository": "omdev74/leonida-progress",
+  "sdk_reference": {
+    "revision": "61c7718954ec73dbdd43c723240fe1a0452a3724",
+    "sha256": "773657b07955f7cdd526fb77049c1d8c5d23679e8cbe9ede90443cd2c93d3fab"
+  }
 }
