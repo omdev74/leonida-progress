@@ -91,7 +91,7 @@ def method_groups(body: str):
             if len(row) != 5:
                 raise SourceError("Method table column count changed")
             name = row[0].strip().strip("`")
-            if not re.fullmatch(r"ID3D12[A-Za-z0-9]+", name):
+            if not re.fullmatch(r"I[A-Z][A-Za-z0-9_]+", name):
                 raise SourceError(f"Unexpected interface name: {name!r}")
             try:
                 total, main, pr, opened = [int(clean(c).replace(",", "")) for c in row[1:]]

@@ -75,7 +75,7 @@ class ParserTests(unittest.TestCase):
         self.assertEqual(sum(g["total"] for g in groups), 11)
 
     def test_new_interfaces_are_discovered(self):
-        body = METHODS.replace("| `ID3D12Fence1`", "| `ID3D12BrandNewObject` | 1 | 0 | 1 | 0 |\n| `ID3D12Fence1`")
+        body = METHODS.replace("| `ID3D12Fence1`", "| `IDXGISwapChain4` | 1 | 0 | 1 | 0 |\n| `ID3D12Fence1`")
         self.assertEqual(len(p.method_groups(body)), 3)
 
     def test_rejects_bad_denominators_and_missing_tables(self):
