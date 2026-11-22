@@ -1,13 +1,13 @@
 # Leonida tracker evidence
 
-Checked: 2026-11-22 02:36 UTC
+Checked: 2026-11-22 02:37 UTC
 
 No game, runtime or GPU tests run by this tracker. Not a game-completion estimate.
 
 ## Sources
 
 - [Issue #313](https://github.com/ItsNotRexed/Leonida/issues/313); source updated 2026-11-22T02:34:34Z.
-- [Issue #634](https://github.com/ItsNotRexed/Leonida/issues/634); source updated 2026-11-22T02:35:59Z.
+- [Issue #634](https://github.com/ItsNotRexed/Leonida/issues/634); source updated 2026-11-22T02:37:21Z.
 
 The source update time includes comments; it does not prove when the tables were last reconciled.
 Counts are coordinator-reported, not independently scanned from C++ or verified by this tracker.
