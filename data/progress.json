@@ -2,7 +2,7 @@
   "schema_version": 2,
   "upstream": "ItsNotRexed/Leonida",
   "repository": "omdev74/leonida-progress",
-  "observed_at": "2026-11-22 03:00 UTC",
+  "observed_at": "2026-11-22 03:01 UTC",
   "source": {
     "revision": "67204bf8c0471335d9046890288b33e8d5e2875b",
     "reference": {
@@ -1960,7 +1960,7 @@
     {
       "number": 634,
       "url": "https://github.com/ItsNotRexed/Leonida/issues/634",
-      "updated_at": "2026-11-22T02:59:55Z"
+      "updated_at": "2026-11-22T03:00:53Z"
     }
   ],
   "warnings": [],
