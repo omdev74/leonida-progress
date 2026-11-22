@@ -1,13 +1,13 @@
 # Leonida tracker evidence
 
-Checked: 2026-11-22 02:37 UTC
+Checked: 2026-11-22 02:40 UTC
 
 No game, runtime or GPU tests run by this tracker. Not a game-completion estimate.
 
 ## Sources
 
-- [Issue #313](https://github.com/ItsNotRexed/Leonida/issues/313); source updated 2026-11-22T02:34:34Z.
-- [Issue #634](https://github.com/ItsNotRexed/Leonida/issues/634); source updated 2026-11-22T02:37:21Z.
+- [Issue #313](https://github.com/ItsNotRexed/Leonida/issues/313); source updated 2026-11-22T02:39:04Z.
+- [Issue #634](https://github.com/ItsNotRexed/Leonida/issues/634); source updated 2026-11-22T02:40:05Z.
 
 The source update time includes comments; it does not prove when the tables were last reconciled.
 Counts are coordinator-reported, not independently scanned from C++ or verified by this tracker.
@@ -32,14 +32,14 @@ Current coordination tables only. Tasks leaving these tables are not assumed com
 
 | Group | Total | Active / claimed | Available | Blocked | Unclear |
 |---|---:|---:|---:|---:|---:|
-| D3D12 / Vulkan | 62 | 48 | 4 | 10 | 0 |
-| Shader translator | 42 | 39 | 2 | 1 | 0 |
-| Tests / CI | 24 | 18 | 5 | 1 | 0 |
-| Build / tools | 19 | 19 | 0 | 0 | 0 |
+| D3D12 / Vulkan | 62 | 49 | 3 | 10 | 0 |
+| Shader translator | 43 | 39 | 3 | 1 | 0 |
+| Tests / CI | 25 | 19 | 5 | 1 | 0 |
+| Build / tools | 21 | 21 | 0 | 0 | 0 |
 | Assets / formats | 16 | 10 | 3 | 3 | 0 |
-| Runtime | 7 | 4 | 0 | 3 | 0 |
+| Runtime | 9 | 5 | 0 | 4 | 0 |
 | Fuzzing | 4 | 2 | 0 | 2 | 0 |
-| Contributor process | 3 | 3 | 0 | 0 | 0 |
+| Contributor process | 4 | 4 | 0 | 0 | 0 |
 
 ## Listed task IDs
 
@@ -84,6 +84,8 @@ New task prefixes are discovered automatically. Repeated task IDs count once.
 | BUILD-130 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | BUILD-131 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | BUILD-132 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
+| BUILD-133 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
+| BUILD-134 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | D3D-2 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/313) |
 | D3D-3 | Blocked | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/313) |
 | D3D-4 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/313) |
@@ -141,7 +143,7 @@ New task prefixes are discovered automatically. Repeated task IDs count once.
 | D3D-93 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/313) |
 | D3D-94 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/313) |
 | D3D-95 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/313) |
-| D3D-96 | Available | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/313) |
+| D3D-96 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/313) |
 | D3D-97 | Available | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/313) |
 | D3D-98 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/313) |
 | D3D-99 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/313) |
@@ -153,6 +155,7 @@ New task prefixes are discovered automatically. Repeated task IDs count once.
 | PROC-15 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | PROC-23 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | PROC-24 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
+| PROC-25 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | RT-4 | Blocked | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | RT-5 | Blocked | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | RT-10 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
@@ -160,6 +163,8 @@ New task prefixes are discovered automatically. Repeated task IDs count once.
 | RT-19 | Blocked | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | RT-20 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | RT-21 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
+| RT-22 | Blocked | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
+| RT-23 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | SHADER-10 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | SHADER-21 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | SHADER-23 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
@@ -202,6 +207,7 @@ New task prefixes are discovered automatically. Repeated task IDs count once.
 | SHADER-115 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | SHADER-116 | Available | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | SHADER-117 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
+| SHADER-118 | Available | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | TEST-29 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | TEST-39 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | TEST-50 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
@@ -226,3 +232,4 @@ New task prefixes are discovered automatically. Repeated task IDs count once.
 | TEST-102 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | TEST-103 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
 | TEST-104 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |
+| TEST-105 | Active / claimed | [Coordination table](https://github.com/ItsNotRexed/Leonida/issues/634) |

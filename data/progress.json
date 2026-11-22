@@ -2,17 +2,17 @@
   "schema_version": 1,
   "upstream": "ItsNotRexed/Leonida",
   "repository": "omdev74/leonida-progress",
-  "observed_at": "2026-11-22 02:37 UTC",
+  "observed_at": "2026-11-22 02:40 UTC",
   "sources": [
     {
       "number": 313,
       "url": "https://github.com/ItsNotRexed/Leonida/issues/313",
-      "updated_at": "2026-11-22T02:34:34Z"
+      "updated_at": "2026-11-22T02:39:04Z"
     },
     {
       "number": 634,
       "url": "https://github.com/ItsNotRexed/Leonida/issues/634",
-      "updated_at": "2026-11-22T02:37:21Z"
+      "updated_at": "2026-11-22T02:40:05Z"
     }
   ],
   "panels": [
@@ -109,8 +109,8 @@
           "prefix": "D3D",
           "total": 62,
           "counts": {
-            "active": 48,
-            "available": 4,
+            "active": 49,
+            "available": 3,
             "blocked": 10,
             "unknown": 0
           }
@@ -118,10 +118,10 @@
         {
           "name": "Shader translator",
           "prefix": "SHADER",
-          "total": 42,
+          "total": 43,
           "counts": {
             "active": 39,
-            "available": 2,
+            "available": 3,
             "blocked": 1,
             "unknown": 0
           }
@@ -129,9 +129,9 @@
         {
           "name": "Tests / CI",
           "prefix": "TEST",
-          "total": 24,
+          "total": 25,
           "counts": {
-            "active": 18,
+            "active": 19,
             "available": 5,
             "blocked": 1,
             "unknown": 0
@@ -140,9 +140,9 @@
         {
           "name": "Build / tools",
           "prefix": "BUILD",
-          "total": 19,
+          "total": 21,
           "counts": {
-            "active": 19,
+            "active": 21,
             "available": 0,
             "blocked": 0,
             "unknown": 0
@@ -162,11 +162,11 @@
         {
           "name": "Runtime",
           "prefix": "RT",
-          "total": 7,
+          "total": 9,
           "counts": {
-            "active": 4,
+            "active": 5,
             "available": 0,
-            "blocked": 3,
+            "blocked": 4,
             "unknown": 0
           }
         },
@@ -184,9 +184,9 @@
         {
           "name": "Contributor process",
           "prefix": "PROC",
-          "total": 3,
+          "total": 4,
           "counts": {
-            "active": 3,
+            "active": 4,
             "available": 0,
             "blocked": 0,
             "unknown": 0
@@ -368,6 +368,16 @@
     },
     {
       "id": "BUILD-132",
+      "state": "active",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
+      "id": "BUILD-133",
+      "state": "active",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
+      "id": "BUILD-134",
       "state": "active",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
     },
@@ -658,7 +668,7 @@
     },
     {
       "id": "D3D-96",
-      "state": "available",
+      "state": "active",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/313"
     },
     {
@@ -717,6 +727,11 @@
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
     },
     {
+      "id": "PROC-25",
+      "state": "active",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
       "id": "RT-4",
       "state": "blocked",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
@@ -748,6 +763,16 @@
     },
     {
       "id": "RT-21",
+      "state": "active",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
+      "id": "RT-22",
+      "state": "blocked",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
+      "id": "RT-23",
       "state": "active",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
     },
@@ -962,6 +987,11 @@
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
     },
     {
+      "id": "SHADER-118",
+      "state": "available",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
       "id": "TEST-29",
       "state": "active",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
@@ -1078,6 +1108,11 @@
     },
     {
       "id": "TEST-104",
+      "state": "active",
+      "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
+    },
+    {
+      "id": "TEST-105",
       "state": "active",
       "source": "https://github.com/ItsNotRexed/Leonida/issues/634"
     }
